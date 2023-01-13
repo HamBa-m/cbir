@@ -8,7 +8,7 @@ CBIR is a computer vision technique for retrieving images from a database based 
 
 - RGB
 - HSV
-- LAB
+- YCRCB
 
 ## by texture
 
@@ -18,6 +18,6 @@ CBIR is a computer vision technique for retrieving images from a database based 
 
 ## by shape
 
-- HOG
-- SIFT
-- SURF
+- LOG
+- SOBEL
+- HU
