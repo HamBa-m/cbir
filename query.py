@@ -1,20 +1,21 @@
-import cv2 as cv
-import numpy as np
-from extractors import *
+from features import partition, openIMG, extractHist
 from index import normalize
-import scipy.spatial.distance as dist
-
-def EuclidianDist(hist1, hist2):
-    return dist.euclidean(hist1, hist2)
-
-def ManhattanDist(hist1, hist2):
-    return dist.cityblock(hist1, hist2)
-
-def CosineDist(hist1, hist2):
-    return dist.cosine(hist1, hist2)
 
 def queryDatabase(query, database, color, texture, shape, weight, metric):
-    """Query the database for the most similar images to the query."""
+    """
+    description:
+        Query the database for the most similar images to the query.
+    args:
+        query: the path to the query image
+        database: the database of images
+        color: the color space to use
+        texture: the texture descriptor to use
+        shape: the shape descriptor to use
+        weight: the weight of each descriptor
+        metric: the metric to use
+    returns:
+        a dictionary of the distances between the query and the images in the database
+    """
     query = partition(openIMG(query))
     query_features = dict()
     query_features["Color"] = normalize(extractHist(query, color))
@@ -28,8 +29,3 @@ def queryDatabase(query, database, color, texture, shape, weight, metric):
             distances[key] += weight[1]*metric(database[key]["textures"][texture.__name__][i], query_features["Texture"][i])
             distances[key] += weight[2]*metric(database[key]["shapes"][shape.__name__][i], query_features["Shape"][i])
     return distances
-
-def similarityPercentage(target, MAX_DIST):
-    """Return the percentage of similarity between the query and the database."""
-    return 100*(1-target/MAX_DIST)
-

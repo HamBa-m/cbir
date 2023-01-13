@@ -1,6 +1,6 @@
 from index import *
-from norms import *
-from extractors import *
+from metrics import *
+from features import *
 
 # load the database
 with open("features.json", "r") as infile:

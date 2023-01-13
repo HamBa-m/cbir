@@ -1,13 +1,20 @@
 import cv2 as cv
 import numpy as np
-from extractors import *
+from features import *
 import glob
 import sys
 import colorama # for colored output in terminal
 import json
 
 def normalize(features):
-    """Normalize the features of an image."""
+    """
+    description: 
+        Normalize the features of an image.
+    args:
+        features: the features of an image.
+    returns:
+        the normalized features of an image.
+    """
     L= list()
     for feature in features:
         MAX = max(feature)
@@ -19,7 +26,17 @@ def normalize(features):
     return L
 
 def makeDatabase(database, colors, textures, shapes):
-    """Make a database of the images in the database folder."""
+    """
+    description:
+        Index the database of images by extracting the features of each image in a JSON file.
+    args:
+        database: the database of images
+        colors: the color spaces to use
+        textures: the texture descriptors to use
+        shapes: the shape descriptors to use
+    returns:   
+        a dictionary of the features of the images in the database
+    """
     paths = glob.glob(database + "/*.*")
     database_features = dict()
     Tmax = len(paths)
@@ -49,7 +66,7 @@ def makeDatabase(database, colors, textures, shapes):
     with open("features.json", "w") as outfile:
         json.dump(database_features, outfile)
 
-# test the function above
+# index the database
 if __name__ == '__main__':
     print("Indexing database...")
     makeDatabase("db", [RGB, HSV, YCRCB], [LBP, GLCM, LPQ], [LOG, SOBEL,HU])
