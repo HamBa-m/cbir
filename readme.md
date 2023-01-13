@@ -12,9 +12,9 @@ CBIR is a computer vision technique for retrieving images from a database based 
 
 ## by texture
 
-- Gabor
-- GLCM
 - LBP
+- GLCM
+- LPQ
 
 ## by shape
 
