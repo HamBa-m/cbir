@@ -1,6 +1,7 @@
 from index import *
 from metrics import *
 from features import *
+from query import *
 
 # load the database
 with open("features.json", "r") as infile:
@@ -10,7 +11,7 @@ with open("features.json", "r") as infile:
 query = "20485.jpg"
 
 # query the database for the most similar images
-distances = queryDatabase(query, database, YCRCB, LPQ, HU,[1,0,0], EuclidianDist)
+distances = queryDatabase(query, database, YCRCB, LPQ, HU,[1,0,0], RiemannDist)
 
 # sort the distances
 distances = sorted(distances.items(), key=lambda x: x[1])

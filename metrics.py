@@ -37,6 +37,17 @@ def CosineDist(hist1, hist2):
     """
     return dist.cosine(hist1, hist2)
 
+def RiemannDist(hist1, hist2):
+    """
+    description: Riemann distance between two histograms
+    args:
+        hist1: the first histogram
+        hist2: the second histogram
+    returns:
+        the Riemann distance between the two histograms
+    """
+    return dist.chebyshev(hist1, hist2)
+
 def similarityPercentage(target, MAX_DIST):
     """
     desceiption : Return the percentage of similarity between the query and the database.
