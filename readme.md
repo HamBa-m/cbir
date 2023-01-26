@@ -1,6 +1,6 @@
 # Content Based Image Retrival (CBIR)
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Python Version](https://img.shields.io/badge/Python-3.x-green.svg)](https://www.python.org/downloads/) [![Project Version](https://img.shields.io/badge/Project%20Version-1.0-lightgrey.svg)](https://github.com/HamzaBamohammed/CBIR)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/HamzaBamohammed/cbir/blob/master/LICENSE) [![Python Version](https://img.shields.io/badge/Python-3.x-green.svg)](https://www.python.org/downloads/) [![Project Version](https://img.shields.io/badge/Project%20Version-1.0-lightgrey.svg)](https://github.com/HamzaBamohammed/CBIR)
 
 ## Introduction
 
@@ -35,6 +35,7 @@ The query image is the image that we want to search for in the database. The que
 The features are matched using the following metrics:
 
 - Euclidean distance.
+- Chebyshev distance.
 - Cosine similarity.
 - Manhattan distance.
 
