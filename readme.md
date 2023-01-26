@@ -43,6 +43,7 @@ The similarity score is calculated for each image in the database and the images
 ## Authors
 - [@FilaliHicham](https://www.github.com/FILALIHicham), Applied Mathematics & AI engineering student at ENSIAS.
 - [@HamzaBamohammed](https://www.github.com/HamzaBamohammed), Applied Mathematics & AI engineering student at ENSIAS
+- [@BouchraSahri](https://www.github.com/bouchrasa), Applied Mathematics & AI engineering student at ENSIAS
 
 ## Instructions
 1. Clone the repository to your local machine
